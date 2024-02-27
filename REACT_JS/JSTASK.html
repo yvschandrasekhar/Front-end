@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="head">
+        <p>one</p>
+        <p>two</p>
+        <p>three</p>
+        <p>four</p>
+        <p>five</p>
+        <p>six</p>
+        <p>seven</p>
+        <p>Eight</p>
+        <p>nine</p>
+        <p>Ten</p>
+    </div>
+    <script>
+            let i = 0;
+            let j = 0;
+            const oldtags = document.querySelectorAll('p')
+            const handleClick = () => {
+                const header = document.getElementById('head')
+                const newtags = document.createElement('p')
+                if (j % 2 === 0) {
+                    newtags.addEventListener('click', handleClick)
+                    j++
+                }
+                else {
+                    j++
+                }
+            
+                newtags.innerHTML = `${j}`
+                header.appendChild(newtags)
+            }
+            oldtags.map(element => {
+            
+                if (i % 2 === 0) {
+                    element.addEventListener('click', handleClick)
+                    i++;
+                }
+                else {
+                    i++
+                }
+            
+            
+            });
+
+    </script>
+</body>
+</html>
